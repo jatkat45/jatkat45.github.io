@@ -39,6 +39,16 @@ var MapsLib = {
   addrMarkerImage:    'images/blue-pushpin.png', // set to empty '' to hide searched address marker
   currentPinpoint:    null,
 
+// adds FusionTablesLayer (points) 
+    layer = new google.maps.FusionTablesLayer({
+        query: {
+          select: '\'Geocodable address\'',
+          from: '1mZ53Z70NsChnBMm-qEYmSDOvLXgrreLTkQUvvg'
+        }
+    });
+  
+    layer.setMap(map);
+
   initialize: function() {
     $( "#result_count" ).html("");
 
