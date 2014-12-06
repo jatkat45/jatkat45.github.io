@@ -6,15 +6,18 @@
  * Licensed under the MIT license.
  * https://github.com/derekeder/FusionTable-Map-Template/wiki/License
  *
- * Date: 12/10/2012
+ * Date: 12/10/2012 updated 12/6/14 for Site_Selector
  *
  */
 
 // Enable the visual refresh
 google.maps.visualRefresh = true;
 
-var MapsLib = MapsLib || {};
+var MapsLib = MapsLib || {}, layer;
 var MapsLib = {
+
+  //Setup section - put your Fusion Table details here
+  //Using the v1 Fusion Tables API. See https://developers.google.com/fusiontables/docs/v1/migration_guide for more info
 
   //the encrypted Table ID of your Fusion Table (found under File => About) Georgia_data
   //NOTE: numeric IDs will be deprecated soon
@@ -39,16 +42,6 @@ var MapsLib = {
   addrMarkerImage:    'images/blue-pushpin.png', // set to empty '' to hide searched address marker
   currentPinpoint:    null,
 
-// adds FusionTablesLayer (points) 
-    layer = new google.maps.FusionTablesLayer({
-        query: {
-          select: '\'Geocodable address\'',
-          from: '1mZ53Z70NsChnBMm-qEYmSDOvLXgrreLTkQUvvg'
-        }
-    });
-  
-    layer.setMap(map);
-
   initialize: function() {
     $( "#result_count" ).html("");
 
@@ -64,7 +57,17 @@ var MapsLib = {
     google.maps.event.addDomListener(map, 'idle', function() {
         MapsLib.calculateCenter();
     });
-
+    
+    // adds Google Fusion Table Layer
+    layer = new google.maps.FusionTablesLayer({
+      query: {
+        select: '\'Geocodable address\'',
+        from: '1mZ53Z70NsChnBMm-qEYmSDOvLXgrreLTkQUvvg'
+      }
+    });
+    layer.setMap(map);
+  }
+    
     google.maps.event.addDomListener(window, 'resize', function() {
         map.setCenter(MapsLib.map_centroid);
     });
