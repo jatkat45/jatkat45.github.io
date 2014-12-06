@@ -13,7 +13,7 @@
 // Enable the visual refresh
 google.maps.visualRefresh = true;
 
-var MapsLib = MapsLib || {}, layer;
+var MapsLib = MapsLib || {};
 var MapsLib = {
 
   //Setup section - put your Fusion Table details here
@@ -59,14 +59,14 @@ var MapsLib = {
     });
     
     // adds Google Fusion Table Layer
-    layer = new google.maps.FusionTablesLayer({
-      query: {
-        select: '\'Geocodable address\'',
-        from: '1mZ53Z70NsChnBMm-qEYmSDOvLXgrreLTkQUvvg'
-      }
-    });
-    layer.setMap(map);
-  }
+    //layer = new google.maps.FusionTablesLayer({
+     // query: {
+      //  select: '\'Geocodable address\'',
+      //  from: '1mZ53Z70NsChnBMm-qEYmSDOvLXgrreLTkQUvvg'
+      //}
+    //});
+    //layer.setMap(map);
+  //}
     
     google.maps.event.addDomListener(window, 'resize', function() {
         map.setCenter(MapsLib.map_centroid);
