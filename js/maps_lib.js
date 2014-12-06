@@ -13,7 +13,7 @@
 // Enable the visual refresh
 google.maps.visualRefresh = true;
 
-var MapsLib = MapsLib || {};
+var MapsLib = MapsLib || {}, layer;
 var MapsLib = {
 
   //Setup section - put your Fusion Table details here
@@ -59,6 +59,7 @@ var MapsLib = {
     });
     
     // adds Google Fusion Table Layer
+<<<<<<< HEAD
     //layer = new google.maps.FusionTablesLayer({
      // query: {
       //  select: '\'Geocodable address\'',
@@ -67,6 +68,18 @@ var MapsLib = {
     //});
     //layer.setMap(map);
   //}
+=======
+    layer = new google.maps.FusionTablesLayer({
+      query: {
+        select: '\'Geocodable address\'',
+        from: '1mZ53Z70NsChnBMm-qEYmSDOvLXgrreLTkQUvvg'
+      }
+      styleId: 2,
+     templateId: 2
+    });
+    layer.setMap(map);
+  }
+>>>>>>> Site_Selector
     
     google.maps.event.addDomListener(window, 'resize', function() {
         map.setCenter(MapsLib.map_centroid);
@@ -172,6 +185,10 @@ var MapsLib = {
     MapsLib.getCount(whereClause);
   },
 
+  MapsLib.getList(whereClause);
+  
+    
+  
   clearSearch: function() {
     if (MapsLib.searchrecords != null)
       MapsLib.searchrecords.setMap(null);
@@ -302,6 +319,53 @@ var MapsLib = {
     $( "#result_box" ).fadeIn();
   },
 
+  // adds search results
+  
+  getList: function(whereClause) {
+    var selectColumns = 'name, address, hours, recyclables ';
+
+    MapsLib.query({ 
+      select: selectColumns, 
+      where: whereClause 
+    }, function(response) { 
+      MapsLib.displayList(response);
+    });
+  },
+
+  displayList: function(json) {
+    MapsLib.handleError(json);
+    console.log(json)
+    var data = json['rows'];
+    var template = '';
+
+    var results = $('#results_list');
+    results.hide().empty(); //hide the existing list and empty it out first
+
+    if (data == null) {
+      //clear results list
+      results.append("<li><span class='lead'>No results found</span></li>");
+    }
+    else {
+      for (var row in data) {
+        template = "\
+          <div class='row-fluid item-list'>\
+            <div class='span12'>\
+              <strong>" + data[row][0] + "</strong>\
+              <br />\
+              " + data[row][1] + "\
+              <br />\
+              " + data[row][2] + "\
+              <br />\
+              " + data[row][3] + "\
+            </div>\
+          </div>";
+        results.append(template);
+      }
+    }
+    results.fadeIn();
+  },
+
+    
   addCommas: function(nStr) {
     nStr += '';
     x = nStr.split('.');
