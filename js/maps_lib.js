@@ -13,7 +13,7 @@
 // Enable the visual refresh
 google.maps.visualRefresh = true;
 
-var MapsLib = MapsLib || {};
+var MapsLib = MapsLib || {}, layer;
 var MapsLib = {
 
   //Setup section - put your Fusion Table details here
@@ -58,7 +58,7 @@ var MapsLib = {
         MapsLib.calculateCenter();
     });
     
-    
+      
     google.maps.event.addDomListener(window, 'resize', function() {
         map.setCenter(MapsLib.map_centroid);
     });
