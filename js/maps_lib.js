@@ -19,9 +19,9 @@ var MapsLib = {
  //Setup section - put your Fusion Table details here
   //Using the v1 Fusion Tables API. See https://developers.google.com/fusiontables/docs/v1/migration_guide for more info
 
-  //the encrypted Table ID of your Fusion Table (found under File => About) Georgia_data
+  //the encrypted Table ID of your Fusion Table (found under File => About) NC
   //NOTE: numeric IDs will be deprecated soon
-  fusionTableId:      "1dwwnydtT8v7uxvVz8DeAOOWp7wwTnDdaPDpkwBh3",
+  fusionTableId:      "1t0OoRDZTOLLvoZBYOtOfC920qzUqn7Y-61WYURak", // NC
 
   //*New Fusion Tables Requirement* API key. found at https://code.google.com/apis/console/
   //*Important* this has been updated with API for site_selector project (Brittany Adams)
@@ -32,8 +32,8 @@ var MapsLib = {
   //example: locationColumn:     "'my location'",
   locationColumn:     "geometry",
 
-  map_centroid:       new google.maps.LatLng(33.7489954, -84.3879824), //center that your map defaults to
-  locationScope:      "georgia",      //geographical area appended to all address searches
+  map_centroid:       new google.maps.LatLng(41.2786652478829, -84.3879824), //center that your map defaults to
+  locationScope:      "US",      //geographical area appended to all address searches
   recordName:         "result",       //for showing number of results
   recordNamePlural:   "results",
 
@@ -156,7 +156,7 @@ var MapsLib = {
         where:  whereClause
       },
       styleId: 2,
-      templateId: 3
+      templateId: 2
     });
     MapsLib.searchrecords.setMap(map);
     MapsLib.getCount(whereClause);
