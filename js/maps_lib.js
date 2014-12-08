@@ -6,26 +6,26 @@
  * Licensed under the MIT license.
  * https://github.com/derekeder/FusionTable-Map-Template/wiki/License
  *
- * Date: 12/10/2012 updated 12/6/14 for Site_Selector
+ * Date: 12/10/2012
  *
  */
 
 // Enable the visual refresh
 google.maps.visualRefresh = true;
 
-var MapsLib = MapsLib || {}, layer;
+var MapsLib = MapsLib || {};
 var MapsLib = {
 
-  //Setup section - put your Fusion Table details here
+ //Setup section - put your Fusion Table details here
   //Using the v1 Fusion Tables API. See https://developers.google.com/fusiontables/docs/v1/migration_guide for more info
 
-  //the encrypted Table ID of your Fusion Table (found under File => About) Georgia Income data
+  //the encrypted Table ID of your Fusion Table (found under File => About) Georgia_data
   //NOTE: numeric IDs will be deprecated soon
-  fusionTableId:      "1t0OoRDZTOLLvoZBYOtOfC920qzUqn7Y-61WYURak", // change to NC
+  fusionTableId:      "1dwwnydtT8v7uxvVz8DeAOOWp7wwTnDdaPDpkwBh3",
 
   //*New Fusion Tables Requirement* API key. found at https://code.google.com/apis/console/
   //*Important* this has been updated with API for site_selector project (Brittany Adams)
-  googleApiKey:       "AIzaSyAPfShlARJC_hlxEPD0QlOCNPejuAk6Pvs", // for Brittany Adams
+  googleApiKey:       "AIzaSyAPfShlARJC_hlxEPD0QlOCNPejuAk6Pvs",
 
   //name of the location column in your Fusion Table.
   //NOTE: if your location column name has spaces in it, surround it with single quotes
@@ -44,7 +44,7 @@ var MapsLib = {
 
   initialize: function() {
     $( "#result_count" ).html("");
-
+    
     geocoder = new google.maps.Geocoder();
     var myOptions = {
       zoom: MapsLib.defaultZoom,
@@ -57,8 +57,7 @@ var MapsLib = {
     google.maps.event.addDomListener(map, 'idle', function() {
         MapsLib.calculateCenter();
     });
-    
-      
+
     google.maps.event.addDomListener(window, 'resize', function() {
         map.setCenter(MapsLib.map_centroid);
     });
@@ -156,17 +155,13 @@ var MapsLib = {
         select: MapsLib.locationColumn,
         where:  whereClause
       },
-      styleId: 2, // y = 2
-      templateId: 2 // tmpl = 2
+      styleId: 2,
+      templateId: 2
     });
     MapsLib.searchrecords.setMap(map);
     MapsLib.getCount(whereClause);
   },
 
-  MapsLib.getList(whereClause);
-  
-    
-  
   clearSearch: function() {
     if (MapsLib.searchrecords != null)
       MapsLib.searchrecords.setMap(null);
@@ -297,53 +292,6 @@ var MapsLib = {
     $( "#result_box" ).fadeIn();
   },
 
-  // adds search results
-  
-  getList: function(whereClause) {
-    var selectColumns = 'name, address, hours, recyclables ';
-
-    MapsLib.query({ 
-      select: selectColumns, 
-      where: whereClause 
-    }, function(response) { 
-      MapsLib.displayList(response);
-    });
-  },
-
-  displayList: function(json) {
-    MapsLib.handleError(json);
-    console.log(json)
-    var data = json['rows'];
-    var template = '';
-
-    var results = $('#results_list');
-    results.hide().empty(); //hide the existing list and empty it out first
-
-    if (data == null) {
-      //clear results list
-      results.append("<li><span class='lead'>No results found</span></li>");
-    }
-    else {
-      for (var row in data) {
-        template = "\
-          <div class='row-fluid item-list'>\
-            <div class='span12'>\
-              <strong>" + data[row][0] + "</strong>\
-              <br />\
-              " + data[row][1] + "\
-              <br />\
-              " + data[row][2] + "\
-              <br />\
-              " + data[row][3] + "\
-            </div>\
-          </div>";
-        results.append(template);
-      }
-    }
-    results.fadeIn();
-  },
-
-    
   addCommas: function(nStr) {
     nStr += '';
     x = nStr.split('.');
