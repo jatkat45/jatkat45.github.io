@@ -21,11 +21,11 @@ var MapsLib = {
 
   //the encrypted Table ID of your Fusion Table (found under File => About) NC
   //NOTE: numeric IDs will be deprecated soon
-  fusionTableId:      "1t0OoRDZTOLLvoZBYOtOfC920qzUqn7Y-61WYURak", // NC
+  fusionTableId:      "14WQ9niyXF5NXClrBqU5gvQTs5jHSLDL4U17egdcE"
 
   //*New Fusion Tables Requirement* API key. found at https://code.google.com/apis/console/
   //*Important* this has been updated with API for site_selector project (Brittany Adams)
-  googleApiKey:       "AIzaSyAPfShlARJC_hlxEPD0QlOCNPejuAk6Pvs",
+  googleApiKey:       "AIzaSyBYm15tTZMwNvWhyoTxpL4oamJvUQfd0jI",
 
   //name of the location column in your Fusion Table.
   //NOTE: if your location column name has spaces in it, surround it with single quotes
