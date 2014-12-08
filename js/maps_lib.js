@@ -6,7 +6,7 @@
  * Licensed under the MIT license.
  * https://github.com/derekeder/FusionTable-Map-Template/wiki/License
  *
- * Date: 12/10/2012
+ * Date: 12/10/2012 updated 2014
  *
  */
 
@@ -19,21 +19,29 @@ var MapsLib = {
  //Setup section - put your Fusion Table details here
   //Using the v1 Fusion Tables API. See https://developers.google.com/fusiontables/docs/v1/migration_guide for more info
 
-  //the encrypted Table ID of your Fusion Table (found under File => About) Georgia_data
+  //the encrypted Table ID of your Fusion Table (found under File => About) NC
   //NOTE: numeric IDs will be deprecated soon
-  fusionTableId:      "1dwwnydtT8v7uxvVz8DeAOOWp7wwTnDdaPDpkwBh3",
+
+  fusionTableId:      "14WQ9niyXF5NXClrBqU5gvQTs5jHSLDL4U17egdcE",
 
   //*New Fusion Tables Requirement* API key. found at https://code.google.com/apis/console/
   //*Important* this has been updated with API for site_selector project (Brittany Adams)
-  googleApiKey:       "AIzaSyAPfShlARJC_hlxEPD0QlOCNPejuAk6Pvs",
+  googleApiKey:       "AIzaSyBYm15tTZMwNvWhyoTxpL4oamJvUQfd0jI",
+
+  fusionTableId:      "14WQ9niyXF5NXClrBqU5gvQTs5jHSLDL4U17egdcE", // JT Google Drive = GA
+
+  //*New Fusion Tables Requirement* API key. found at https://code.google.com/apis/console/
+  //*Important* this key is for demonstration purposes. please register your own.
+  googleApiKey:       "AIzaSyA3FQFrNr5W2OEVmuENqhb2MBB2JabdaOY", // Project API using Brittany Adams account
+
 
   //name of the location column in your Fusion Table.
   //NOTE: if your location column name has spaces in it, surround it with single quotes
   //example: locationColumn:     "'my location'",
   locationColumn:     "geometry",
 
-  map_centroid:       new google.maps.LatLng(33.7489954, -84.3879824), //center that your map defaults to
-  locationScope:      "georgia",      //geographical area appended to all address searches
+  map_centroid:       new google.maps.LatLng(32.6872614059324, -83.431676117526), //center that your map defaults to
+  locationScope:      "US",      //geographical area appended to all address searches
   recordName:         "result",       //for showing number of results
   recordNamePlural:   "results",
 
