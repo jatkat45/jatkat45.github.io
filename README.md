@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3f004ac97ca3ab8bd43071ef8aba48e23f3b6588
 ## Copyright and attribution
 
 Copyright (c) 2014 Derek Eder. Released under the MIT License.
