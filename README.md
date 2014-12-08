@@ -1,4 +1,12 @@
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 3f004ac97ca3ab8bd43071ef8aba48e23f3b6588
+=======
+>>>>>>> 284f4b6a07dc0dc6f569cb87258f6a62e52a8e8a
+>>>>>>> master
+>>>>>>> test
 ## Copyright and attribution
 
 Copyright (c) 2014 Derek Eder. Released under the MIT License.
