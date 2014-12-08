@@ -21,11 +21,11 @@ var MapsLib = {
 
   //the encrypted Table ID of your Fusion Table (found under File => About) Georgia Income data
   //NOTE: numeric IDs will be deprecated soon
-  fusionTableId:      "1dwwnydtT8v7uxvVz8DeAOOWp7wwTnDdaPDpkwBh3", 
+  fusionTableId:      "1t0OoRDZTOLLvoZBYOtOfC920qzUqn7Y-61WYURak", // change to NC
 
   //*New Fusion Tables Requirement* API key. found at https://code.google.com/apis/console/
   //*Important* this has been updated with API for site_selector project (Brittany Adams)
-  googleApiKey:       "AIzaSyAPfShlARJC_hlxEPD0QlOCNPejuAk6Pvs",
+  googleApiKey:       "AIzaSyAPfShlARJC_hlxEPD0QlOCNPejuAk6Pvs", // for Brittany Adams
 
   //name of the location column in your Fusion Table.
   //NOTE: if your location column name has spaces in it, surround it with single quotes
@@ -156,8 +156,8 @@ var MapsLib = {
         select: MapsLib.locationColumn,
         where:  whereClause
       },
-      styleId: 4, // y = 4
-      templateId: 5 // tmpl = 5
+      styleId: 2, // y = 2
+      templateId: 2 // tmpl = 2
     });
     MapsLib.searchrecords.setMap(map);
     MapsLib.getCount(whereClause);
