@@ -157,7 +157,7 @@ var MapsLib = {
         where:  whereClause
       },
       styleId: 4, // y = 4
-      templateId: 6 // tmpl = 6
+      templateId: 5 // tmpl = 5
     });
     MapsLib.searchrecords.setMap(map);
     MapsLib.getCount(whereClause);
