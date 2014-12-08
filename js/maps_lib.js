@@ -27,7 +27,7 @@ var MapsLib = {
   //*New Fusion Tables Requirement* API key. found at https://code.google.com/apis/console/
   //*Important* this has been updated with API for site_selector project (Brittany Adams)
   googleApiKey:       "AIzaSyBYm15tTZMwNvWhyoTxpL4oamJvUQfd0jI",
-=======
+
   fusionTableId:      "14WQ9niyXF5NXClrBqU5gvQTs5jHSLDL4U17egdcE", // JT Google Drive = GA
 
   //*New Fusion Tables Requirement* API key. found at https://code.google.com/apis/console/
