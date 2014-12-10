@@ -23,7 +23,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class='navbar-brand' href='index.html'>Searchable Map Template</a>
+          <a class='navbar-brand' href='index.html'>Searchable Map</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -36,7 +36,7 @@
     <div class='container-fluid'>
       <div class='row'>
         <div class='col-md-4'>
-          <p>Searchable Map Template using Google Fusion Tables</p>
+          <p>This is a demo of Site Selector Map </p>
           <div class='well'>
             <h4>
               Address <small>(<a id='find_me' href='#'>find me</a>)</small>
@@ -59,25 +59,26 @@
             </p>
 
             <br />
-            <h4>Custom filters and views</h4>
-            <p>Create:</p>
-            <div class='row'>
+            <h4>Layers</h4>
+            <p>Select one: </p>
+            
               <div class='col-md-6'>
                 <ul>
-                  <li><a href='https://github.com/derekeder/FusionTable-Map-Template/wiki/Filter-examples#wiki-checkboxes'>Checkboxes</a></li>
-                  <li><a href='https://github.com/derekeder/FusionTable-Map-Template/wiki/Filter-examples#wiki-radiobuttons'>Radio buttons</a></li>
-                  <li><a href='https://github.com/derekeder/FusionTable-Map-Template/wiki/Filter-examples#wiki-drop-down-lists'>Drop down lists</a></li>
-                  <li><a href='https://github.com/derekeder/FusionTable-Map-Template/wiki/Filter-examples#wiki-textsearches'>Text searches</a></li>
+                  * 2012 Est Income
+                  * 2012 Est Population
                 </ul>
               </div>
-              <div class='col-md-6'>
-                <ul>
-                  <li><a href='https://github.com/derekeder/FusionTable-Map-Template/wiki/Filter-examples#wiki-sliders'>Sliders</a></li>
-                  <li><a href='https://github.com/derekeder/FusionTable-Map-Template/wiki/Filter-examples#wiki-date-sliders'>Date sliders</a></li>
-                  <li><a href='https://github.com/derekeder/FusionTable-Map-Template/wiki/List-search-results'>Results lists</a></li>
-                </ul>
-              </div>
-            </div>
+               <h4>
+       Select state:
+       </h4>
+       <label>
+         <select id='select_type'>
+           <option value=''>State</option>
+           <option value='1'>Colorado</option>
+           <option value='2'>Connecticut</option>
+           <option value='3'>Florida</option>
+           <option value='4'>Georgia</option>
+           </select>
             <br />
             <a class='btn btn-primary' id='search' href='#'>
               <i class='glyphicon glyphicon-search'></i>
@@ -89,6 +90,9 @@
             </a>
           </div>
           <div class='alert alert-info' id='result_box' ><strong id='result_count'></strong></div>
+          <div class='well'> 
+            <div id='results_list'></div>
+            </div>
         </div>
         <div class='col-md-8'>
           <noscript>
